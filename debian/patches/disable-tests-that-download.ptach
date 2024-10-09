@@ -1,0 +1,61 @@
+From: Reinhard Tartler <siretart@tauware.de>
+Date: Tue, 9 Jul 2024 20:59:24 -0400
+Subject: disable-tests-that-download.ptach
+
+===================================================================
+---
+ pkg/oauth/oidc/pkce_test.go            | 4 ++++
+ pkg/oauthflow/pkce_test.go             | 5 +++++
+ pkg/signature/kms/azure/client_test.go | 4 ++++
+ pkg/tuf/client_test.go                 | 4 ++++
+ 4 files changed, 17 insertions(+)
+
+diff --git a/pkg/oauth/oidc/pkce_test.go b/pkg/oauth/oidc/pkce_test.go
+index 9f91609..6ebd3c9 100644
+--- a/pkg/oauth/oidc/pkce_test.go
++++ b/pkg/oauth/oidc/pkce_test.go
+@@ -1,3 +1,7 @@
++// +build debian_disabled
++
++// disabled in debian as these tests require internet connectivity
++
+ // Copyright 2022 The Sigstore Authors.
+ //
+ // Licensed under the Apache License, Version 2.0 (the "License");
+diff --git a/pkg/oauthflow/pkce_test.go b/pkg/oauthflow/pkce_test.go
+index 4872b78..b91d596 100644
+--- a/pkg/oauthflow/pkce_test.go
++++ b/pkg/oauthflow/pkce_test.go
+@@ -1,3 +1,8 @@
++// +build debian_disabled
++
++// disabled in debian as these tests require internet connectivity
++
++
+ //
+ // Copyright 2021 The Sigstore Authors.
+ //
+diff --git a/pkg/signature/kms/azure/client_test.go b/pkg/signature/kms/azure/client_test.go
+index 0f961e0..3e64b3e 100644
+--- a/pkg/signature/kms/azure/client_test.go
++++ b/pkg/signature/kms/azure/client_test.go
+@@ -1,3 +1,7 @@
++// +build debian_disabled
++
++// disabled in debian as these tests require internet connectivity
++
+ //
+ // Copyright 2022 The Sigstore Authors.
+ //
+diff --git a/pkg/tuf/client_test.go b/pkg/tuf/client_test.go
+index 0ead4b5..7bea964 100644
+--- a/pkg/tuf/client_test.go
++++ b/pkg/tuf/client_test.go
+@@ -1,3 +1,7 @@
++// +build debian_disabled
++
++// disabled in debian as these tests require internet connectivity
++
+ //
+ // Copyright 2022 The Sigstore Authors.
+ //
