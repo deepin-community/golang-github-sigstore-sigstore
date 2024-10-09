@@ -1,5 +1,47 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-sigstore-sigstore (1.8.6-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream release: 1.8.6
+  * Compile against go-jose v3
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Reinhard Tartler <siretart@tauware.de>  Tue, 09 Jul 2024 20:54:07 -0400
+
+golang-github-sigstore-sigstore (1.8.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Upload to unstable.
+  * Add securesystemslib >= 0.8 for binary package too.
+
+ -- Simon Josefsson <simon@josefsson.org>  Wed, 24 Jan 2024 16:25:37 +0100
+
+golang-github-sigstore-sigstore (1.8.0-1) experimental; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Need securesystemslib 0.8
+
+ -- Simon Josefsson <simon@josefsson.org>  Tue, 16 Jan 2024 23:48:07 +0100
+
+golang-github-sigstore-sigstore (1.7.5-1) unstable; urgency=medium
+
+  * New upstream release
+  * Enable most of the test suite
+
+ -- Reinhard Tartler <siretart@tauware.de>  Tue, 21 Nov 2023 15:03:25 +0000
+
+golang-github-sigstore-sigstore (1.4.0-3) unstable; urgency=medium
+
+  * Build against securesystemslib 0.7
+
+ -- Reinhard Tartler <siretart@tauware.de>  Fri, 27 Oct 2023 11:51:14 -0400
+
+golang-github-sigstore-sigstore (1.4.0-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Reinhard Tartler <siretart@tauware.de>  Sun, 20 Aug 2023 19:54:04 -0400
+
+golang-github-sigstore-sigstore (1.4.0-1) experimental; urgency=medium
+
+  * Initial release, Closes: #1029170
+
+ -- Reinhard Tartler <siretart@tauware.de>  Tue, 18 Jul 2023 21:15:28 -0400

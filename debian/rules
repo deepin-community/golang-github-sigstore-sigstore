@@ -1,4 +1,19 @@
 #!/usr/bin/make -f
 
+export DH_GOLANG_INSTALL_ALL := 1
+export DH_GOLANG_EXCLUDES := kms/hashivault kms/gcp kms/azure test/fuzz
+
 %:
-	dh $@
+	dh $@ --builddirectory=_build --buildsystem=golang --with=golang
+
+override_dh_auto_test:
+# disable tests for now
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	# make test binaries available where the tests expect them
+	mkdir -p -m700 $(CURDIR)/debian/tmp-home/
+	env \
+	  HOME=$(CURDIR)/debian/tmp-home/.cache \
+	  DH_GOLANG_EXCLUDES="$${DH_GOLANG_EXCLUDES}" \
+	dh_auto_test -v --max-parallel=2 -- -tags "$(BUILDTAGS)"
+	rm -rf $(CURDIR)/debian/tmp-home
+endif
